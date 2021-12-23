@@ -38,6 +38,10 @@
 }
 
 /* USER STYLES */
+.header {
+  text-decoration: none;
+  display: block;
+}
 #fundohead {
   background: #1ac540 !important;
   margin: 0 !important;
