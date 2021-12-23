@@ -3,15 +3,14 @@ export default function Footer() {
     <footer className="py-5 px-3">
       <div className="row">
         <div className="col-6 col-md">
-          <h5>Features</h5>
           <ul className="list-unstyled text-small">
             <li>
-              <a className="text-muted" href="/#">
-                Numero de Vascinados
+              <a className="text-white" href="/#">
+                Número de Vacinados
               </a>
             </li>
             <li>
-              <a className="text-muted" href="/#">
+              <a className="text-white" href="/#">
                 Contato
               </a>
             </li>
