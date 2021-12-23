@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Menu() {
   return (
     <nav
@@ -11,15 +13,15 @@ export default function Menu() {
         <button type="button" class="btn btn-warning" id="btn">
           Já sou Cadastrado
         </button>
-        <button type="button" class="btn btn-warning" id="btn">
+        <Link to="/cadastro" class="btn btn-warning" id="btn">
           População Geral
-        </button>
-        <button type="button" class="btn btn-warning" id="btn">
+        </Link>
+        <Link to="/cadastro" class="btn btn-warning" id="btn">
           Profissionais do Transporte
-        </button>
-        <button type="button" class="btn btn-warning" id="btn">
+        </Link>
+        <Link to="/cadastro" class="btn btn-warning" id="btn">
           Profissionais da Educação
-        </button>
+        </Link>
         <button type="button" class="btn btn-warning" id="btn">
           Pontos de Vacinação
         </button>
