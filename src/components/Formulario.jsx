@@ -1,3 +1,4 @@
+import { setPatientInfo } from "../services/api";
 import Input from "./Input";
 
 export default function Formulario() {
@@ -5,41 +6,49 @@ export default function Formulario() {
     inputNome: {
       label: "Nome Completo",
       inputType: "text",
+      name: "nome",
       values: [],
     },
     inputNascimento: {
       label: "Data de Nascimento",
       inputType: "text",
+      name: "nascimento",
       values: [],
     },
     inputEndereco: {
       label: "Endereço",
       inputType: "text",
+      name: "endereco",
       values: [],
     },
     inputTelefone: {
       label: "Telefone para contato",
       inputType: "text",
+      name: "telefone",
       values: [],
     },
     inputSexo: {
       label: "Sexo",
       inputType: "text",
+      name: "sexo",
       values: [],
     },
     inputNomedoPai: {
       label: "Nome do Pai",
       inputType: "text",
+      name: "pai",
       values: [],
     },
     inputNomedaMae: {
       label: "Nome da Mãe",
       inputType: "text",
+      name: "mae",
       values: [],
     },
     inputGrupoPrioritario: {
       label: "Grupo Prioritário",
       inputType: "radio",
+      name: "prioridade",
       values: ["Sim", "Não"],
     },
   };
@@ -48,13 +57,17 @@ export default function Formulario() {
       <h1 className="display-4 font-weight-normal" id="formucadastro">
         <b>Formulário de cadastro</b>
       </h1>
-      <form className="d-flex flex-column align-items-center gap-3">
+      <form
+        className="d-flex flex-column align-items-center gap-3"
+        id="cadastro-form"
+        onSubmit={setPatientInfo}
+      >
         {Object.entries(campos).map(([key, info]) => {
           const label = info.label;
           const inputType = info.inputType;
-          const inputId = key;
-          const inputName = inputType == "radio" ? "prioridade" : null;
+          const inputName = info.name;
           const inputValues = info.values;
+          const inputId = key;
           return (
             <Input
               key={inputId}
