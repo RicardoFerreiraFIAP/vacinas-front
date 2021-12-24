@@ -24,32 +24,18 @@ export default function Input(props) {
         <div className="d-flex gap-3">
           {inputValues.map((value) => {
             return (
-              <div className="">
+              <div className="" key={value}>
                 <input
                   type="radio"
                   id={inputId}
                   name={inputName}
                   value={value}
                 />
-                <label for={inputId}>{value}</label>
+                <label htmlFor={inputId}>{value}</label>
               </div>
             );
           })}
         </div>
-
-        {/* <div>
-          <input type="radio" id="dewey" name="drone" value="dewey" />
-          <label for="dewey">Dewey</label>
-        </div>
-        <label htmlFor={inputId}>
-          <b>{label}</b>
-        </label>
-        <input
-          type={inputType}
-          className="form-control"
-          id={inputId}
-          name={inputName}
-        /> */}
       </div>
     );
   }
