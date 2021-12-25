@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import getFormData from "../utils/getFormData";
+import { getFormData, formatData } from "../utils/utils";
 
 export async function getPatientInfo(event) {
   console.log("inside");
@@ -10,11 +10,19 @@ export async function getPatientInfo(event) {
   const completeUrl = `${URL}/${RESOURCE}/${RESOURCEIDENTIFIER}`;
   const MySwal = withReactContent(Swal);
 
+  const fakeUrl = "https://jsonplaceholder.typicode.com/users";
+
   try {
-    const response = await fetch(completeUrl);
+    const response = await fetch(fakeUrl);
+    console.log({ response });
     const convertedResponse = await response.json();
-    //todo: formatData()
-    //todo: disparar swal com dados
+    console.log({ convertedResponse });
+    const formattedResponseInHtml = formatData(convertedResponse);
+    MySwal.fire({
+      title: <p>Dados do Paciente</p>,
+      html: formattedResponseInHtml,
+      icon: "info",
+    });
     //todo: se nao tiver dados avisar que nao esta cadastrado
     return convertedResponse;
   } catch (error) {
