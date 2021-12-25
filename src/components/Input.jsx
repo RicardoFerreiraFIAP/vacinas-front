@@ -22,20 +22,17 @@ export default function Input(props) {
           <b>{label}</b>
         </label>
         <div className="d-flex gap-3">
-          {inputValues.map((value) => {
-            return (
-              <div className="" key={value}>
-                <input
-                  type="radio"
-                  id={inputId}
-                  name={inputName}
-                  value={value}
-                />
-                <label htmlFor={inputId}>{value}</label>
-              </div>
-            );
-          })}
+          {inputValues.map(renderRadioButtons)}
         </div>
+      </div>
+    );
+  }
+
+  function renderRadioButtons(value) {
+    return (
+      <div className="" key={value}>
+        <input type="radio" id={inputId} name={inputName} value={value} />
+        <label htmlFor={inputId}>{value}</label>
       </div>
     );
   }

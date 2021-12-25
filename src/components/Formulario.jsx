@@ -62,23 +62,7 @@ export default function Formulario() {
         id="cadastro-form"
         onSubmit={setPatientInfo}
       >
-        {Object.entries(campos).map(([key, info]) => {
-          const label = info.label;
-          const inputType = info.inputType;
-          const inputName = info.name;
-          const inputValues = info.values;
-          const inputId = key;
-          return (
-            <Input
-              key={inputId}
-              label={label}
-              inputType={inputType}
-              inputId={inputId}
-              inputName={inputName}
-              inputValues={inputValues}
-            />
-          );
-        })}
+        {Object.entries(campos).map(renderInputElement)}
 
         <button className="btn btn-warning d-inline-block" id="btn">
           Enviar Formulário
@@ -86,4 +70,22 @@ export default function Formulario() {
       </form>
     </div>
   );
+
+  function renderInputElement([key, info]) {
+    const label = info.label;
+    const inputType = info.inputType;
+    const inputName = info.name;
+    const inputValues = info.values;
+    const inputId = key;
+    return (
+      <Input
+        key={inputId}
+        label={label}
+        inputType={inputType}
+        inputId={inputId}
+        inputName={inputName}
+        inputValues={inputValues}
+      />
+    );
+  }
 }
