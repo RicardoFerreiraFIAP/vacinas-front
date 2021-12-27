@@ -1,66 +1,37 @@
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-import { getFormData, formatData } from "../utils/utils";
+const URL = "http://localhost:80/vacinas";
 
 export async function getPatientInfo(event) {
-  console.log("inside");
-  const URL = "URL";
-  const RESOURCE = "resource";
-  const RESOURCEIDENTIFIER = "identifier";
-  const completeUrl = `${URL}/${RESOURCE}/${RESOURCEIDENTIFIER}`;
-  const MySwal = withReactContent(Swal);
-
+  console.log("getting");
   const fakeUrl = "https://jsonplaceholder.typicode.com/users";
 
   try {
-    const response = await fetch(fakeUrl);
+    const response = await fetch(URL);
     console.log({ response });
     const convertedResponse = await response.json();
     console.log({ convertedResponse });
-    const formattedResponseInHtml = formatData(convertedResponse);
-    MySwal.fire({
-      title: <p>Dados do Paciente</p>,
-      html: formattedResponseInHtml,
-      icon: "info",
-    });
-    //todo: se nao tiver dados avisar que nao esta cadastrado
     return convertedResponse;
   } catch (error) {
     console.log("errou", error);
-    return await MySwal.fire({
-      title: <p>Oops! Aconteceu um erro!</p>,
-      text: "Não foi possível recuperar seus dados. Por favor, tente novamente.",
-      icon: "error",
-    });
+    return false;
   }
 }
 
-export async function setPatientInfo(event) {
-  console.log("inside");
-  event.preventDefault();
-  const URL = "URL";
-  const RESOURCE = "resource";
-  const RESOURCEIDENTIFIER = "identifier";
-  const completeUrl = `${URL}/${RESOURCE}/${RESOURCEIDENTIFIER}`;
-  const MySwal = withReactContent(Swal);
-
+export async function registerPatientInfo(formData) {
   try {
-    const formData = getFormData();
+    console.log({ formData });
     const settings = {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ ...formData }),
     };
-    const response = await fetch(completeUrl, settings);
-    if (response.ok) return true;
-    //Todo: pegar erro?
-    const convertedResponse = await response.json();
-    return convertedResponse;
+    const response = await fetch(URL, settings);
+
+    console.log({ response });
+    return response.ok ? true : false;
   } catch (error) {
     console.log("errou", error);
-    await MySwal.fire({
-      title: <p>Oops! Aconteceu um erro!</p>,
-      text: "Não foi possível recuperar seus dados. Por favor, tente novamente.",
-      icon: "error",
-    });
+    return false;
   }
 }
