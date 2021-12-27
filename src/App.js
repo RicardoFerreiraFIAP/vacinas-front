@@ -13,13 +13,19 @@ const Loading = () => <div className="loading">Loading...</div>;
 
 export default function App() {
   const [hasInfoModalAppeared, setInfoModalAppeared] = useState(false);
+  const [patientInfo, setPatientInfo] = useState([]);
 
   useEffect(handleInfoModalToTeacher);
 
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home patientInfo={patientInfo} setPatientInfo={setPatientInfo} />
+          }
+        />
         <Route path="cadastro" element={<Cadastro />} />
       </Routes>
     </Suspense>
