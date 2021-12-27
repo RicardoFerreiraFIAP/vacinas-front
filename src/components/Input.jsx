@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 export default function Input(props) {
   const { label, inputType, inputId, inputName, inputValues } = props;
 
@@ -12,6 +13,7 @@ export default function Input(props) {
           className="form-control"
           id={inputId}
           name={inputName}
+          required
         />
       </div>
     );
@@ -31,7 +33,13 @@ export default function Input(props) {
   function renderRadioButtons(value) {
     return (
       <div className="" key={value}>
-        <input type="radio" id={inputId} name={inputName} value={value} />
+        <input
+          type="radio"
+          id={inputId}
+          name={inputName}
+          value={value}
+          required
+        />
         <label htmlFor={inputId}>{value}</label>
       </div>
     );

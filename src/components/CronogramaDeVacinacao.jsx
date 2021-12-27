@@ -9,7 +9,7 @@ export default function CronogramaDeVacinacao() {
         id="titlebloco2"
         style={{ color: "#1ac540" }}
       >
-        <b>Cronograma de Vascinação</b>
+        <b>Cronograma de Vacinação</b>
       </h1>
       <div className="card-body">
         <div className="row row-accordion-Crono">
