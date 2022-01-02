@@ -1,7 +1,6 @@
 const URL = "http://localhost:80/vacinas";
 
 export async function getPatientInfo(event) {
-  console.log("getting");
   const fakeUrl = "https://jsonplaceholder.typicode.com/users";
 
   try {
