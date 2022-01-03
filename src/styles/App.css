@@ -38,6 +38,21 @@
 }
 
 /* USER STYLES */
+
+.primary__color {
+  color: #1ac540;
+}
+
+.f-size-30 {
+  font-size: 30px !important;
+}
+.f-size-40 {
+  font-size: 40px !important;
+}
+.f-size-50 {
+  font-size: 50px !important;
+}
+
 .header {
   text-decoration: none;
   display: block;
@@ -64,20 +79,18 @@
 }
 
 #vacinadados2 {
-  float: left;
   background: #d5eaeb;
-  font-size: 30px;
-  padding: 15px;
+  font-size: 25px;
+  padding: 10px;
 }
 #vacinadados3 {
-  float: right;
   background: #d5eaeb;
-  font-size: 30px;
-  padding: 15px;
+  font-size: 25px;
+  padding: 10px;
 }
 
 #titlebloco2 {
-  font-size: 30px;
+  font-size: 40px;
 }
 .btn-warning {
   margin: 30px;
@@ -86,8 +99,9 @@
   font-size: 30px;
   color: #d5eaeb;
 }
-#titlebloco2 {
-  font-size: 40px;
+
+.stats__cabecalho {
+  font-size: 22px;
   color: #d5eaeb;
 }
 

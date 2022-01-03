@@ -14,7 +14,7 @@ export default function Menu(props) {
       id="fundohead2"
     >
       <div className="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 className="display-4 font-weight-normal" id="titlebloco2">
+        <h1 className="display-4 font-weight-normal f-size-40 text-white">
           <b>Cadastro</b>
         </h1>
         <button

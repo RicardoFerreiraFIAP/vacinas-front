@@ -4,11 +4,7 @@ export default function CronogramaDeVacinacao() {
       className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
       id="fundohead3"
     >
-      <h1
-        className="display-4 font-weight-normal"
-        id="titlebloco2"
-        style={{ color: "#1ac540" }}
-      >
+      <h1 className="display-4 font-weight-normal primary__color f-size-40">
         <b>Cronograma de Vacinação</b>
       </h1>
       <div className="card-body">
