@@ -16,6 +16,34 @@
 background: #0d8b28 !important;
 margin: 0 !important;
 }
+#texto2{
+
+  float: left;
+  font-size: 24px;
+  color: white;
+}
+#texto3{
+
+  float: right;
+  font-size: 24px;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  #texto2{
+
+    float: left;
+    font-size: 15px;
+    
+  }
+  #texto3{
+  
+    float: right;
+    font-size: 15px;
+    
+  }
+}
+
 
 #vacinadados{
 
@@ -75,6 +103,10 @@ text-align: center;
 margin-bottom: 70px;
 
 
+}
+.container{
+
+  max-width: 100% !important;
 }
  .py-5{
     background: black;
@@ -223,7 +255,9 @@ margin-bottom: 70px;
       text-align: left;  
   }
   
-  
+footer {
+  color: white;
+}
   
   #accordionCrono .card-body .footer-card {
     height: 48px;
