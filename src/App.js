@@ -1,25 +1,59 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { Suspense, useEffect, useState } from "react";
 
-function App() {
+import "./styles/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import Home from "./pages/Home";
+import Cadastro from "./pages/Cadastro";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const Loading = () => <div className="loading">Loading...</div>;
+
+export default function App() {
+  const [hasInfoModalAppeared, setInfoModalAppeared] = useState(false);
+  const [patientInfo, setPatientInfo] = useState([]);
+
+  useEffect(handleInfoModalToTeacher);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home patientInfo={patientInfo} setPatientInfo={setPatientInfo} />
+          }
+        />
+        <Route path="cadastro" element={<Cadastro />} />
+      </Routes>
+    </Suspense>
   );
-}
 
-export default App;
+  function handleInfoModalToTeacher() {
+    const MySwal = withReactContent(Swal);
+    if (!hasInfoModalAppeared) {
+      setTimeout(async () => {
+        await MySwal.fire({
+          title: <p>Informação sobre o trabalho</p>,
+          html: (
+            <p>
+              Professor, para testar o nosso trabalho, por favor ler o{" "}
+              <a
+                href="https://github.com/Vacinas-Backend/vacinas-front"
+                target="_blank"
+                rel="noreferrer"
+              >
+                README
+              </a>
+              &nbsp; com as instruções necessárias.
+            </p>
+          ),
+          icon: "info",
+        });
+        setInfoModalAppeared(true);
+      }, 1000);
+    }
+  }
+}
