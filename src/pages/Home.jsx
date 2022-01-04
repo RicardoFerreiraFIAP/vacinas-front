@@ -12,7 +12,6 @@ export default function Home(props) {
   useEffect(() => {
     async function fetchData() {
       const updatedPatientInfo = await getPatientInfo();
-      console.log({ updatedPatientInfo });
       setPatientInfo(updatedPatientInfo);
     }
     fetchData();

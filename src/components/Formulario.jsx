@@ -108,7 +108,6 @@ export default function Formulario() {
     event.preventDefault();
     const form = event.currentTarget;
     const formIsValid = validateForm(form.elements);
-    console.log({ formIsValid });
 
     if (formIsValid) {
       const formData = getFormData(form);
