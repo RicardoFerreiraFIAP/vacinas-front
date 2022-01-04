@@ -4,7 +4,7 @@ Neste projeto foram é possível criar dados de um paciente e resgatar esses dad
 
 ## Preparando o Ambiente
 
-Antes de tudo é necessário fazer o download do [Código do Backend](https://bitbucket.org/RicardoFerreiraFiap/vacina-backend/src) em Spring Boot e rodá-lo.
+Antes de tudo é necessário fazer o download do [Código do Backend](https://github.com/Vacinas-Backend/vacinas-back) em Spring Boot e rodá-lo. No README deste projeto estão as instruções para rodá-lo.
 
 ## Criar cadastro
 
@@ -18,4 +18,4 @@ Todos esses botões levam para a tela de cadastro onde o paciente será adiciona
 
 ## Ler informações do seu cadastro
 
-Para ler as ifnormações que você cadastrou é necessário apenas clicar no botão "Já sou Cadastrado", onde será disparado um modal com as informações inseridas.
+Para ler as informações que você cadastrou é necessário apenas clicar no botão "Já sou Cadastrado", onde será disparado um modal com as informações inseridas.
